@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+
+        while (t-- > 0) {
+            int a = sc.nextInt(); //anna //first
+            int b = sc.nextInt(); //katie
+            int c = sc.nextInt(); //either
+
+            if((a + c/2 + c%2) <= (b + c/2)){
+                System.out.println("Second");
+            }else{
+                System.out.println("First");
+            }
+        }
+        //End of while
+        sc.close();
+    }
+}

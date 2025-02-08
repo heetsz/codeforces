@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        while (t-- > 0) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            int d = sc.nextInt();
+            
+            int moves = 0;
+            int m1 = 0,  m2 = 0;
+            if(a < c){
+                m1 =   c - a;  
+            }if(b < d){
+                m2 =  d - b;
+            }
+            moves = Math.max(m1, m2);
+            a = a + moves;
+            b = b + moves;
+            if(a != c)
+                moves = moves + a - c;
+            if(b!=d)
+                moves = -1;
+            
+            System.out.println(moves);
+        }
+        //while ends here 
+        sc.close();
+    }
+}
+
+//        ":" +       System.out.println()   

@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        while (t-- > 0) {
+            int n = sc.nextInt(); // Sum to be formed
+            int k = sc.nextInt(); // Numbers allowed from 1 to k
+            int x = sc.nextInt(); // Except this number
+            
+            if (x != 1) {
+                // If x is not 1, we can use `1` exactly `n` times
+                System.out.println("YES");
+                System.out.println(n);
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < n; i++) {
+                    sb.append(1).append(" ");
+                }
+                System.out.println(sb.toString().trim());
+            } else if (k == 1 || (k == 2 && n % 2 == 1)) {
+                // If k == 1 or (k == 2 and n is odd), it's impossible to form n
+                System.out.println("NO");
+            } else {
+                // Otherwise, we can use numbers from 1 to k excluding x
+                System.out.println("YES");
+                System.out.println(n / 2);
+                StringBuilder sb = new StringBuilder();
+                
+                // First number is `3` if n is odd, otherwise `2`
+                sb.append(n % 2 == 1 ? 3 : 2).append(" ");
+                
+                // Remaining numbers are all `2`
+                for (int i = 0; i < n / 2 - 1; i++) {
+                    sb.append(2).append(" ");
+                }
+                System.out.println(sb.toString().trim());
+            }
+        }
+        sc.close();
+    }
+}

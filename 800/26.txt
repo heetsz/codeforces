@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Main {
+    public static int gcd(int a, int b) {
+        if (b == 0)
+            return a; // Base case: when b becomes 0, a is the GCD
+        return gcd(b, a % b); // Recursive call with (b, a % b)
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            int arr[] = new int[n];
+            for(int i=0;i<n;i++){
+                arr[i] = sc.nextInt();
+            }
+            boolean gc = false;
+            for(int i=0;i<n;i++){
+                for(int j=i+1;j<n;j++){//go thru each pair
+                    if(gcd(arr[i], arr[j]) <= 2){
+                        gc = true;
+                        break;
+                    }
+                }
+            }
+            if(gc){
+                System.out.println("Yes");
+            }else{
+                System.out.println("No");
+            }
+
+        //while ends here 
+        }
+        sc.close();
+    }
+}
+
+//       ":" +       System.out.println()  
+
+
+

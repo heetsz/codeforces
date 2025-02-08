@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            String s = sc.next();
+            int count = n;
+            int i = 0;
+            int j = n-1;
+            while (i <= j && ((s.charAt(i) == '0' && s.charAt(j) == '1') || (s.charAt(i) == '1' && s.charAt(j) == '0'))){
+                i++;
+                j--;
+                count = count - 2;
+            }
+            System.out.println(count); 
+        //while ends here 
+        }
+        sc.close();
+    }
+}
+
+//       ":" +       System.out.println()  
+
+
